@@ -1,1 +1,156 @@
+/* Import a modern, tech-inspired font from Google Fonts */
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+
+/* Set the default font for the whole page */
+body {
+  font-family: 'Roboto', Arial, Helvetica, sans-serif; /* Use Roboto or a similar sans-serif font */
+  /* ...you can add more body styles here if needed... */
+}
+
+/* Make sure headings also use the modern font */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+
 /* Add your CSS here */
+
+/* Intel-branded header background and layout */
+.intel-header {
+  /* Blue gradient background inspired by Intel branding */
+  background: linear-gradient(135deg, #00C7FD 0%, #0068B5 100%); 
+  color: #fff; /* White text for contrast */
+  padding: 48px 0 40px 0; /* Top and bottom padding */
+  text-align: center; /* Center all header content */
+}
+
+/* Container for header content */
+.header-content {
+  max-width: 700px; /* Limit width for better readability */
+  margin: 0 auto; /* Center horizontally */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Flex container for logo and text */
+.header-container {
+  max-width: 900px; /* Wider layout */
+  margin: 0 auto; /* Center the container */
+  display: flex; /* Place items side by side */
+  align-items: center; /* Vertically center items */
+  justify-content: space-between; /* Space between logo and text */
+  padding: 0 20px; /* Horizontal padding */
+}
+
+/* Intel logo styling */
+.intel-logo {
+  width: 90px; /* Set logo size */
+  margin-bottom: 18px;
+}
+
+/* Text aligned to the left */
+.header-text {
+  text-align: left;
+  max-width: 500px;
+}
+
+/* Main headline styling */
+.header-title {
+  font-size: 2.5rem; /* Large font size */
+  font-weight: bold;
+  letter-spacing: 0.5px; /* Tighter letter spacing */
+  margin: 0 0 24px 0; /* Extra space below for better breathing room */
+  line-height: 1.1;
+  text-transform: none; /* Remove uppercase transform for a cleaner look */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Subtle shadow for emphasis */
+}
+
+/* New subheading class */
+.header-subtitle {
+  font-size: 1.15rem;
+  color: #e3f2fd; /* Subheading color */
+  margin: 0 0 16px 0; /* Bottom margin */
+}
+
+/* Decorative underline below subheading */
+.header-underline {
+  width: 60px;
+  border: 2px solid #00C7FD; /* Intel accent blue */
+  border-radius: 2px;
+  margin: 0 auto 0 auto;
+  background: none;
+}
+
+/* Responsive Horizontal Timeline */
+.responsive-timeline {
+  width: 100%;
+  height: 100vh; /* covers screen height */
+  display: flex;
+  overflow-x: auto; /* allows horizontal scroll on large screens */
+  flex-wrap: nowrap; /* keeps items aligned in a row */
+  scroll-behavior: smooth; /* smoother scrolling */
+  padding: 1rem 0; /* spacing around timeline */
+}
+
+.responsive-timeline > div {
+  flex: 0 0 auto; /* ensures each card is sized for horizontal scroll */
+  /* Remove or comment out conflicting background and shadow if desired */
+  /* background-color: #f7f7f7;
+     box-shadow: 0 1px 4px rgba(0,0,0,0.1); 
+     border-radius: 8px; 
+  */
+  padding: 1rem;
+  transition: transform 0.2s; /* smooth hover effect */
+}
+
+.responsive-timeline > div:hover {
+  transform: scale(1.02); /* slight zoom on hover */
+}
+
+/* Each card shows only the year at first */
+.timeline-card {
+  background-color: #0068B5; /* solid color */
+  color: #fff; /* text color for contrast */
+  margin-right: 1rem;
+  border-radius: 8px;
+  flex: 0 0 auto;
+  position: relative; /* for easy positioning of hidden content */
+  width: 220px; /* fixed width so year is visible */
+  text-align: center;
+  padding: 1rem;
+}
+
+.timeline-card h2 {
+  font-size: 2rem;
+  margin: 0;
+  text-align: center; /* Ensures the year is centered at the top */
+}
+
+/* Hide the rest of the content */
+.timeline-card .card-body {
+  display: none; /* hidden by default */
+}
+
+/* Reveal on hover */
+.timeline-card:hover .card-body {
+  display: block;
+  margin-top: 1rem;
+}
+
+.timeline-card img {
+  max-width: 100%; /* Makes images responsive */
+  height: auto;
+}
+
+/* Responsive behavior */
+@media (max-width: 600px) {
+  .responsive-timeline {
+    flex-direction: column; /* stacks on small screens */
+    overflow-x: visible;
+    height: auto; /* allow vertical growth on small screens */
+  }
+  .timeline-card {
+    margin-bottom: 1rem;
+    width: auto; /* full width for stacked layout */
+  }
+}
