@@ -23,6 +23,8 @@ h1, h2, h3, h4, h5, h6 {
   color: #fff; /* White text for contrast */
   padding: 24px 0 20px 0; /* Reduced top/bottom padding */
   text-align: center; /* Center all header content */
+  background-size: 200% 200%;              /* allow gradient movement */
+  animation: gradientAnimation 30s ease infinite; /* slow, seamless loop */
 }
 
 /* Container for header content */
@@ -95,6 +97,17 @@ h1, h2, h3, h4, h5, h6 {
     transform: scaleX(1); /* Fully visible */
   }
 }
+
+/* Keyframes for subtle gradient shift */
+@keyframes gradientAnimation {
+  0%, 100% {
+    background-position: 0% 50%;  /* start and end at left */
+  }
+  50% {
+    background-position: 100% 50%; /* mid-point at right */
+  }
+}
+
 /* Responsive Horizontal Timeline */
 .responsive-timeline {
   width: 100%;
